@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Grocery Web - Sign In</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='login.css') }}">
+    
+        <!-- <link rel="stylesheet" href="login.css"> -->
+</head>
+
+<body>
+
+<div class="login-page">
+
+    <div class="login-container">
+
+        <div class="login-header">
+
+            <div class="login-logo">
+                <img src="{{ url_for('static', filename='grocery logo.jpg') }}"
+                     alt="Grocery Logo">
+ 
+            </div>
+
+            <h1>Grocery Web</h1>
+
+            <p>Sign in to your account</p>
+
+        </div>
+
+ <form method="POST" action="/login">
+
+    <input type="text"
+           name="user_name"
+           placeholder="Username"
+           required>
+
+    <input type="password"
+           name="password"
+           placeholder="Password"
+           required>
+
+    <select name="role" required>
+        <option value="">Select Role</option>
+        <option value="admin">Admin</option>
+        <option value="subadmin">Sub Admin</option>
+        <option value="customer">Customer</option>
+    </select>
+
+    <button type="submit">Sign In</button>
+
+</form>
+
+
+        <div class="register-link">
+
+            Don't have an account?
+            <a href="/register">Register</a>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

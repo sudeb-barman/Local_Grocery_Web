@@ -1,0 +1,472 @@
+/* ================================
+   BASIC SETTINGS
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+    color: #222;
+}
+
+
+/* ================================
+   SIDEBAR
+================================ */
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    width: 240px;
+    height: 100vh;
+
+    background: #17212b;
+    color: white;
+
+    padding: 20px 15px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* LOGO */
+
+.logo {
+    display: round;
+    align-items: right;
+
+    gap: 12px;
+
+    padding: 10px;
+
+    margin-bottom: 20px;
+}
+
+.logo-icon {
+    width: 200px;
+    height: 200px;
+
+    border-radius: 70px;
+
+    overflow: hidden;
+
+    display: round;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;  /* how many space need in lower side  */
+}
+
+.logo-icon img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.logo h2 {
+    font-size: 18px;
+    margin-bottom: 3px;
+}
+
+.logo span {
+    gap:20px;
+    font-size: 11px;
+    color: #797f85;
+}
+
+
+/* ================================
+   MENU
+================================ */
+
+nav {
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+.menu {
+    text-decoration: none;
+
+    color: #b8c0ca;
+
+    padding: 13px 15px;
+
+    border-radius: 7px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    font-size: 14px;
+
+    transition: 0.2s;
+}
+
+.menu span {
+    font-size: 18px;
+}
+
+.menu:hover {
+    background: #263442;
+    color: white;
+}
+
+.menu.active {
+    background: #087f5b;
+    color: white;
+}
+
+
+/* ================================
+   SIDEBAR BOTTOM
+================================ */
+
+.sidebar-bottom {
+    margin-top: auto;
+
+    border-top: 1px solid #34414d;
+
+    padding: 18px 10px;
+}
+
+.sidebar-bottom p {
+    font-size: 13px;
+
+    font-weight: bold;
+
+    margin-bottom: 5px;
+}
+
+.sidebar-bottom small {
+    font-size: 10px;
+
+    color: #929ca8;
+}
+
+
+/* ================================
+   MAIN CONTENT
+================================ */
+
+.main {
+    margin-left: 240px;
+
+    padding: 30px;
+
+    min-height: 100vh;
+}
+
+
+/* ================================
+   TOP BAR
+================================ */
+
+.topbar {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 25px;
+}
+
+.topbar h1 {
+    font-size: 28px;
+
+    margin-bottom: 6px;
+}
+
+.topbar p {
+    color: #777;
+
+    font-size: 14px;
+}
+
+
+/* ================================
+   REFRESH BUTTON
+================================ */
+
+.refresh-btn {
+    border: none;
+
+    background: #087f5b;
+
+    color: white;
+
+    padding: 11px 18px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+.refresh-btn:hover {
+    background: #056b4c;
+
+    transform: translateY(-1px);
+}
+
+
+/* ================================
+   SUMMARY CARD
+================================ */
+
+.summary-card {
+    width: 280px;
+
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 9px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.summary-icon {
+    width: 50px;
+    height: 50px;
+
+    border-radius: 8px;
+
+    background: #e7f5ef;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 23px;
+}
+
+.summary-card p {
+    color: #777;
+
+    font-size: 13px;
+
+    margin-bottom: 5px;
+}
+
+.summary-card h2 {
+    font-size: 25px;
+}
+
+
+/* ================================
+   CONTENT BOX
+================================ */
+
+.content-box {
+    background: white;
+
+    border-radius: 9px;
+
+    padding: 25px;
+
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.content-header {
+    margin-bottom: 25px;
+}
+
+.content-header h2 {
+    font-size: 21px;
+
+    margin-bottom: 6px;
+}
+
+.content-header p {
+    color: #777;
+
+    font-size: 13px;
+}
+
+
+/* ================================
+   PRODUCT TABLE
+================================ */
+
+.table-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+}
+
+thead {
+    background: #17212b;
+
+    color: white;
+}
+
+th {
+    padding: 14px;
+
+    text-align: left;
+
+    font-size: 13px;
+}
+
+td {
+    padding: 14px;
+
+    border-bottom: 1px solid #eeeeee;
+
+    font-size: 14px;
+}
+
+tbody tr {
+    transition: 0.2s;
+}
+
+tbody tr:hover {
+    background: #f8f9fa;
+}
+
+
+/* ================================
+   DELETE BUTTON
+================================ */
+
+.delete-btn {
+    background: #dc3545;
+
+    color: white;
+
+    border: none;
+
+    padding: 7px 13px;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+.delete-btn:hover {
+    background: #bb2d3b;
+
+    transform: translateY(-1px);
+}
+
+
+/* ================================
+   NO PRODUCT MESSAGE
+================================ */
+
+.no-product {
+    text-align: center;
+
+    padding: 30px;
+
+    color: #777;
+
+    font-size: 14px;
+}
+
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 800px) {
+
+    .sidebar {
+        width: 200px;
+    }
+
+    .main {
+        margin-left: 200px;
+
+        padding: 20px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .sidebar {
+        width: 65px;
+
+        padding: 15px 8px;
+    }
+
+    .logo {
+        justify-content: center;
+    }
+
+    .logo div:last-child {
+        display: none;
+    }
+
+    .menu {
+        justify-content: center;
+
+        font-size: 0;
+    }
+
+    .menu span {
+        font-size: 20px;
+    }
+
+    .sidebar-bottom {
+        display: none;
+    }
+
+    .main {
+        margin-left: 65px;
+
+        padding: 15px;
+    }
+
+    .topbar {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+    .summary-card {
+        width: 100%;
+    }
+}

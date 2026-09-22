@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Grocery Web - New Order</title>
+
+    <!-- Same dashboard CSS -->
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <!-- Customer CSS -->
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='customer.css') }}">
+
+</head>
+
+
+<body>
+
+
+<!-- ================= SIDEBAR ================= -->
+
+<aside class="sidebar">
+
+    <div class="logo">
+
+        <div class="logo-icon">
+
+            <img src="{{ url_for('static', filename='grocery logo.jpg') }}"
+                 alt="Grocery Logo">
+
+        </div>
+
+        <div>
+
+            <h2>Grocery Web</h2>
+
+            <span>Management</span>
+
+        </div>
+
+    </div>
+
+
+    <nav>
+
+        {% if session["role"] == "admin" %}
+
+            <a href="/orders">📦 Orders</a>
+            <a href="/dashboard">📊 Dashboard</a>
+            <a href="/products">➕ New Product</a>
+
+        {% endif %}
+
+            <a href="/customer">🛒 Customer Page</a>
+            <a href="/logout">🚪 Logout</a>
+
+    </nav>
+
+
+    <div class="sidebar-bottom">
+
+        <p>Sudeb's Grocery</p>
+
+        <small>
+            Grocery Management System
+        </small>
+
+    </div>
+
+</aside>
+
+
+
+<!-- ================= MAIN ================= -->
+
+<main class="main">
+
+
+    <!-- TOPBAR -->
+
+    <div class="topbar">
+
+        <div>
+
+            <h1>Customer Order</h1>
+
+            <p>
+                Create a new grocery order
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ================= CUSTOMER ================= -->
+
+    <div class="content-box">
+
+        <div class="content-header">
+
+            <h2>🧑 Customer Information</h2>
+
+            <p>
+                Enter customer name
+            </p>
+
+        </div>
+
+
+        <input
+            type="text"
+            id="customerName"
+            placeholder="Enter customer name"
+        >
+
+    </div>
+
+
+
+    <!-- ================= PRODUCTS ================= -->
+
+    <div class="content-box">
+
+        <div class="content-header">
+
+            <h2>🛒 Select Products</h2>
+
+            <p>
+                Select product and enter quantity
+            </p>
+
+        </div>
+
+
+        <div id="productRows">
+
+            <div class="product-row">
+
+
+                <select class="product">
+
+                    <option value="">
+                        Select Product
+                    </option>
+
+                </select>
+
+
+                <input
+                    type="number"
+                    class="price"
+                    placeholder="Price"
+                    readonly
+                >
+
+
+                <input
+                    type="number"
+                    placeholder="quantity"
+                    class="quantity"
+                    value=""
+                    min="1"
+                >
+
+
+                <span class="row-total">
+                    ₹0
+                </span>
+
+
+                <button
+                    type="button"
+                    class="remove-btn"
+                    onclick="removeProduct(this)">
+
+                    Delete
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <button
+            type="button"
+            class="add-btn"
+            onclick="addProductRow()">
+
+            + Add Product
+
+        </button>
+
+
+    </div>
+
+
+
+    <!-- ================= TOTAL ================= -->
+
+    <div class="content-box total-box">
+
+        <h2>
+            Grand Total:
+            ₹<span id="grandTotal">0</span>
+        </h2>
+
+
+        <button
+            type="button"
+            class="save-btn"
+            onclick="saveOrder()">
+
+            Save Order
+
+        </button>
+
+    </div>
+
+
+</main>
+
+
+
+<script src="{{ url_for('static', filename='customer.js') }}">
+</script>
+
+</body>
+
+</html>

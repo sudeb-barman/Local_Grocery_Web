@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard</title>
+
+    <link rel="stylesheet"
+      href="{{ url_for('static', filename='dashboard_css.css') }}">
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</head>
+
+
+<body>
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                <img src="{{ url_for('static', filename='grocery logo.jpg') }}">
+                
+            </div>
+
+            <div>
+                <h2>Sudeb's Grocery Web</h2>
+                <span>Management</span>
+            </div>
+
+        </div>
+
+
+        <nav>
+
+            <a href="/index"
+            class="menu" >
+
+                <span>📦</span>
+                Orders
+            </a>
+
+            <a href="/dashboard"
+               class="menu active">
+
+                <span>📊</span>
+
+                Dashboard
+
+            </a>
+
+
+            <a href="/products" class="menu"
+
+                <span>➕</span>
+
+                Add Product
+
+            </a>
+
+            
+            <a href="/customer" class="menu"
+
+                <span>➕</span>
+
+                Customer page 
+
+            </a>
+            
+            
+            <a href="/logout" class="menu"
+
+                <span>⏻</span>
+
+                logout 
+
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <p>Sudeb's Grocery Web</p>
+
+            <small>
+                Grocery Management System
+            </small>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="main">
+
+        <!-- TOP BAR -->
+
+        <div class="topbar">
+
+            <div>
+
+                <h1>Dashboard</h1>
+
+                <p>
+                    View and manage all grocery products
+                </p>
+
+            </div>
+
+
+            <button
+                class="refresh-btn"
+                onclick="loadProducts()">
+
+                🔄 Refresh
+
+            </button>
+
+        </div>
+
+
+
+        <!-- ================= PRODUCT COUNT ================= -->
+
+        <div class="summary-card">
+
+            <div class="summary-icon">
+                📦
+            </div>
+
+            <div>
+
+                <p>Total Products</p>
+
+                <h2 id="totalProducts">
+                    0
+                </h2>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ================= PRODUCTS ================= -->
+
+        <!-- <div class="content-box">
+
+            <div class="content-header">
+
+                <div>
+
+                    <h2 id="totalProducts">0
+                        
+                    </h2>
+
+                    <p>
+                        Products available in your grocery database
+                    </p>
+
+                </div>
+
+            </div> -->
+
+
+            <div class="table-wrapper">
+
+                <table >
+
+                    <thead>
+
+                        <tr>
+
+                            <th>ID</th>
+
+                            <th>Product Name</th>
+
+                            <th>Unit</th>
+
+                            <th>Price</th>
+
+                            <th>Action</th>
+
+                        </tr>
+                    
+                    </thead>
+
+
+                    <tbody id="productTable">
+
+                        <!-- Products will come from JavaScript -->
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+</body>
+
+</html>

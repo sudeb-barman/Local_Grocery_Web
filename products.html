@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Grocery Web - New Order</title>
+
+    <link rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}">
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</head>
+
+
+<body>
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+
+            <img src="{{ url_for('static', filename='grocery logo.jpg') }}">
+                
+            </div>
+
+            <div>
+
+                <h2>Sudeb's Grocery Web</h2>
+
+                <span>Management</span>
+
+            </div>
+
+        </div>
+
+
+        <nav>
+            <a href="/index"
+               class="menu">
+
+                <span>📦</span>
+
+                Orders
+
+            </a>
+
+            <a href="/dashboard"
+               class="menu">
+
+                <span>📊</span>
+
+                Dashboard
+
+            </a>
+
+
+            <a href="/products"
+               class="menu active">
+
+                <span>➕</span>
+
+                Add Product
+
+            </a>
+            
+            <a href="/customer"
+               class="menu">
+
+                <span>➕</span>
+
+                Customer page
+
+            </a>
+
+            <a href="/logout" class="menu"
+
+                <span>⏻</span>
+
+                logout 
+
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <p>Sudeb's Grocery Web</p>
+
+            <small>
+                Grocery Management System
+            </small>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="main">
+
+        <div class="topbar">
+
+            <div>
+
+                <h1>Get Add Product</h1>
+
+                <p>
+                    Add a new product to your grocery database
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ================= FORM ================= -->
+
+        <div class="content-box">
+
+            <div class="content-header">
+
+                <div>
+
+                    <h2>
+                        ➕ Add Product
+                    </h2>
+
+                    <p>
+                        Enter the product information below
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+<div class="order-form">
+
+
+ <input type="text" placeholder="Name of product" id="product_name">
+
+<select id="unit">
+    <option value="">--Select Unit--</option>
+    <option value="1">Piece</option>
+    <option value="2">Kg</option>
+</select>
+
+<input type="number"placeholder="Price" id="price">
+
+<button type="button" onclick="addProduct()">
+    ➕ Add Product
+</button>
+
+        </div>
+
+
+
+        <!-- ================= INFORMATION ================= -->
+
+        <div class="info-box">
+
+            <div class="info-icon">
+                💡
+            </div>
+
+            <div>
+
+                <h3>
+                    Product Information
+                </h3>
+
+                <p>
+                    Enter the product name, select its unit,
+                    and enter the price. Click
+                    <b>Add Product</b> to save it.
+                </p>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+
+    <script src="/static/js/script.js"></script>
+
+</body>
+
+</html>
